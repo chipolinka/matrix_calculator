@@ -1,57 +1,55 @@
 /*<!-- zzz -->*/
 body{
-	margin: 0px;
+    margin: 0px;
+    color: #404040;
+    font: 14px "Segoe UI";
 }
 #menu{
-	background-color: #CCCCCC;
-	width: 40%;
-	height: 100%;
+    background-color: #CCCCCC;
+    width: 40%;
+    height: 100%;
 }
 
-@font-face {
-    font-family: "Segoe UI"; 
-    src: url(шрифт.ttf); 
- }
-
-.but{
-	color: #404040;
-	font: 14px "Segoe UI";
+.font-pic {
+    font-family: "Kontur-Iconic"; 
+    src: url(font.ttf); 
 }
 
 #mul{
-	position: absolute;
-	left: 4%;
-	top: 10%;
-  	font-weight: 700;
-  	color: white;
-  	text-decoration: none;
-  	padding: .7em 4em calc(.5em + 8px);
-  	border-radius: 8px;
-  	background: linear-gradient(#1FAE0F, #138916) green;
-  	text-align: center;
-  	vertical-align: center;
-  	border: solid 1px #008000;
-  	user-select: none;
-  	cursor:pointer;
+    position: absolute;
+    left: 4%;
+    top: 10%;
+    color: white;
+    text-decoration: none;
+    padding: .7em 4em calc(.5em + 8px);
+    border-radius: 8px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background: linear-gradient(#1FAE0F, #138916) green;
+    text-align: center;
+    vertical-align: center;
+    border: solid 1px #008000;
+    cursor:pointer;
+    font-size: 14px;
 }
 #mul:hover { 
-	background: linear-gradient(#138916, #076507) #033A03;
+    background: linear-gradient(#138916, #076507) #033A03;
 }
 #mul:active {
-	background: linear-gradient(#076507, #033A03) #033A03;
+    background: linear-gradient(#076507, #033A03) #033A03;
 }
 #clear{
-	position: absolute;
-	left: 4%;
-	top: 24%;
+    position: absolute;
+    left: 4%;
+    top: 24%;
 }
 #change{
-	position: absolute;
-	left: 4%;
-	top: 32%;  
+    position: absolute;
+    left: 4%;
+    top: 32%;  
 }
 .gray{
-    padding: 4px 20px;
+    padding: 4px 18px;
     font-size: 13px;
     line-height: 20px;
     text-align: center;
@@ -65,16 +63,26 @@ body{
     
 }
 .gray:hover{
-	background: #d8d8d8;
-	background: linear-gradient(#d8d8d8, #ece8e8) #033A03;
-	border: solid 1px #939693;
+    background: #d8d8d8;
+    background: linear-gradient(#d8d8d8, #ece8e8) #033A03;
+    border: solid 1px #939693;
 }
 .gray:active{
-	background: #CCCCCC;
-	border: solid 1px #939693;
+    background: #CCCCCC;
+    border: solid 1px #939693;
 }
 #type_matrix{
-	position: absolute;
-	left: 4%;
-	top: 50%;  
+    position: absolute;
+    left: 4%;
+    top: 50%;  
+}
+#row{
+    position: absolute;
+    left: 4%;
+    top: 60%; 
+}
+#col{
+    position: absolute;
+    left: 4%;
+    top: 70%; 
 }
