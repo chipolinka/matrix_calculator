@@ -1,13 +1,15 @@
 /*<!-- zzz -->*/
 body{
     margin: 0px;
-    color: #404040;
-    font: 14px "Segoe UI";
+    color: #000000;
+    font: 15px "Segoe UI";
 }
-#menu{
+
+#menu {
     background-color: #CCCCCC;
     width: 40%;
     height: 100%;
+
 }
 
 .font-pic {
@@ -15,40 +17,39 @@ body{
     src: url(font.ttf); 
 }
 
-#mul{
-    position: absolute;
-    left: 4%;
-    top: 10%;
+#mul {
+    margin-top: 5%;
+    margin-left: 10%;
     color: white;
     text-decoration: none;
-    padding: .7em 4em calc(.5em + 8px);
-    border-radius: 8px;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
+    padding: .7em 4em calc(.5em + 8px);    
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
     background: linear-gradient(#1FAE0F, #138916) green;
-    text-align: center;
-    vertical-align: center;
     border: solid 1px #008000;
     cursor:pointer;
     font-size: 14px;
 }
+
 #mul:hover { 
     background: linear-gradient(#138916, #076507) #033A03;
 }
+
 #mul:active {
     background: linear-gradient(#076507, #033A03) #033A03;
 }
+
 #clear{
     position: absolute;
     left: 4%;
     top: 24%;
 }
-#change{
+#change {
     position: absolute;
     left: 4%;
     top: 32%;  
 }
-.gray{
+.gray {
     padding: 4px 18px;
     font-size: 13px;
     line-height: 20px;
@@ -62,21 +63,25 @@ body{
     -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#CCCCCC));
     
 }
-.gray:hover{
+.gray:hover {
     background: #d8d8d8;
     background: linear-gradient(#d8d8d8, #ece8e8) #033A03;
     border: solid 1px #939693;
 }
-.gray:active{
+.gray:focus {
+    border: solid 2px #02a6c9;
+}
+
+.gray:active {
     background: #CCCCCC;
     border: solid 1px #939693;
 }
-#type_matrix{
+#type_matrix {
     position: absolute;
     left: 4%;
     top: 50%;  
 }
-#row{
+#row {
     position: absolute;
     left: 4%;
     top: 60%; 
@@ -85,4 +90,8 @@ body{
     position: absolute;
     left: 4%;
     top: 70%; 
+}
+
+#multiply_matrix{
+    
 }
