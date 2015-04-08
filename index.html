@@ -12,16 +12,22 @@
 			<button id="clear" class="gray"> Очистить матрицы</button>
 			<button id="change" class="gray">Поменять матрицы местами</button>
 			<form id="type_matrix">
-      	<input name="matrix" type="radio" value="matrixA"> Матрица А
-    		<input name="matrix" type="radio" value="matrixB"> Матрица В
+      	<input name="matrix" type="radio" value="matrixA" checked> Матрица А
+    		<input name="matrix" type="radio" value="matrixB" > Матрица В
   		</form> 
-  		<p id="row"><button class="gray">Добавить</button> 
-  			<button class="gray">Удалить</button> строку</p>
-  		<p id="col"><button  class="gray">Добавить</button> 
-  			<button class="gray">Удалить</button> столбец</p>
+  		<p id="row"><button id="add_row" class="gray">Добавить</button> 
+  			<button id="del_row" class="gray">Удалить</button> строку</p>
+  		<p id="col"><button id="add_col" class="gray">Добавить</button> 
+  			<button id="del_col" class="gray">Удалить</button> столбец</p>
 		</div>
-		<div id="multiply_matrix">
-      
+		<div id="matrices">
+      <div class="left_col">
+        <div id="matrix_c"></div>
+        <div id="matrix_b"></div>
+      </div>
+      <div class="right_col">
+        <div id="matrix_a"></div>
+      </div>
     </div>
 		<script type="text/javascript" src="main.js"></script>
 	</body>

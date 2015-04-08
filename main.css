@@ -1,5 +1,5 @@
 /*<!-- zzz -->*/
-body{
+body {
     margin: 0px;
     color: #000000;
     font: 15px "Segoe UI";
@@ -9,7 +9,6 @@ body{
     background-color: #CCCCCC;
     width: 40%;
     height: 100%;
-
 }
 
 .font-pic {
@@ -39,7 +38,7 @@ body{
     background: linear-gradient(#076507, #033A03) #033A03;
 }
 
-#clear{
+#clear {
     position: absolute;
     left: 4%;
     top: 24%;
@@ -86,12 +85,47 @@ body{
     left: 4%;
     top: 60%; 
 }
-#col{
+#col {
     position: absolute;
     left: 4%;
     top: 70%; 
 }
 
-#multiply_matrix{
-    
+#matrices{
+    position: absolute;
+    left: 45%;
+    top: 5%; 
+}
+
+#matrices div {
+    margin: 15px;
+}
+
+#matrices table {
+    table-layout: fixed;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#matrices td {
+    /*border-spacing: 1px;*/
+    padding: 10px;
+    /*padding-bottom: 10px;*/
+    height: 15px;
+    letter-spacing: 1px;
+    background: #FFFFFF;
+    /*background: linear-gradient(#d8d8d8, #ece8e8) #033A03;*/
+    border: solid 1px #939693;
+}
+
+.left_col {
+    float: left;
+}
+
+.right_col {
+    float: right;
+}
+
+#matrix_a {
+    position: relative;
 }
