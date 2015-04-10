@@ -8,18 +8,31 @@
 	<body>
 
 		<div id="menu">
-			<button id="mul">Умножить матрицы</button>
-			<button id="clear" class="gray"> Очистить матрицы</button>
-			<button id="change" class="gray">Поменять матрицы местами</button>
-			<form id="type_matrix">
+      <div>
+			 <button id="mul">Умножить матрицы</button> <span class="mul-triangle"></span>
+			</div>
+      <div id="clear">
+        <button class="gray"> <span class="icon">↶</span> Очистить матрицы</button>
+			</div>
+      <div id="change">
+        <button class="gray"> <span class="icon">⇅</span> Поменять матрицы местами</button>
+			</div>
+      <div id="type_matrix">
       	<input name="matrix" type="radio" value="matrix_a" checked> Матрица А
     		<input name="matrix" type="radio" value="matrix_b" > Матрица В
-  		</form> 
-  		<p id="row"><button id="add_row" class="gray">Добавить</button> 
-  			<button id="del_row" class="gray">Удалить</button> строку</p>
-  		<p id="col"><button id="add_col" class="gray">Добавить</button> 
-  			<button id="del_col" class="gray">Удалить</button> столбец</p>
-		</div>
+  		</div>
+      <div> 
+  		<p id="row"><button id="add_row" class="gray"><span class="icon">✚</span> Добавить</button> 
+  			<button id="del_row" class="gray"><span class="icon">➖</span> Удалить</button> строку</p>
+  		<p id="col"><button id="add_col" class="gray"><span class="icon">✚</span> Добавить</button> 
+  			<button id="del_col" class="gray"><span class="icon">➖</span> Удалить</button> столбец</p>
+		  </div>
+      <div id="error_message">
+        <p>Такие матрицы нельзя перемножить, <br/>
+        так как количество столбцов матрицы А <br/> не равно количеству строк матрицы В.  
+        </p>
+      </div>
+    </div>
 		<div id="matrices">
       <div class="left_col">
         <div id="matrix_c"></div>

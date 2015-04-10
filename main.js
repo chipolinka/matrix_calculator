@@ -30,3 +30,8 @@ var col_del_button = document.getElementById("del_col");
 col_del_button.addEventListener("click", function(){
     change_count_cols(false);
 });
+
+var mul_button = document.getElementById("mul");
+mul_button.addEventListener("click", function(){
+    show_mul();
+});

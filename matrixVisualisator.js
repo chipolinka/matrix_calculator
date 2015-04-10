@@ -44,7 +44,7 @@ MatrixVisualisator.prototype.create = function(div_id) {
                 menu.style.background = "#5199db";    
             });
             input.addEventListener("blur", function () {
-                menu.style.background = "#ccc";    
+                menu.style.background = "#ccc";
             });
             td.appendChild(input);
             tr.appendChild(td);
@@ -84,49 +84,79 @@ MatrixVisualisator.prototype.clear = function() {
 }
 
 MatrixVisualisator.prototype.add_row = function() {
-    var new_matrix = [];
-    for (var i = 0; i < this.matrix.data.length + 1; i++) {
-        new_matrix[i] = [];
-        for (var j = 0; j < this.matrix.data[0].length; j++) {
-            if (i < this.matrix.data.length)
-                new_matrix[i][j] = new Cell(this.matrix.data[i][j].val);
-            else new_matrix[i][j] = new Cell(null);
+    if (this.matrix.data.length == 10)
+    {
+        menu.style.background = "#f6c1c0";
+    }
+    else {
+        var new_matrix = [];
+        for (var i = 0; i < this.matrix.data.length + 1; i++) {
+            new_matrix[i] = [];
+            for (var j = 0; j < this.matrix.data[0].length; j++) {
+                if (i < this.matrix.data.length)
+                    new_matrix[i][j] = new Cell(this.matrix.data[i][j].val);
+                else new_matrix[i][j] = new Cell(null);
+            };
         };
-    };
-    this.matrix.data = new_matrix;
+        this.matrix.data = new_matrix;
+    }
 }
 
 MatrixVisualisator.prototype.del_row = function() {
-    var new_matrix = [];
-    for (var i = 0; i < this.matrix.data.length - 1; i++) {
-        new_matrix[i] = [];
-        for (var j = 0; j < this.matrix.data[0].length; j++) {
-            new_matrix[i][j] = new Cell(this.matrix.data[i][j].val);
+    if (this.matrix.data.length == 2)
+    {
+        menu.style.background = "#f6c1c0";
+    }
+    else {
+        var new_matrix = [];
+        for (var i = 0; i < this.matrix.data.length - 1; i++) {
+            new_matrix[i] = [];
+            for (var j = 0; j < this.matrix.data[0].length; j++) {
+                new_matrix[i][j] = new Cell(this.matrix.data[i][j].val);
+            };
         };
-    };
-    this.matrix.data = new_matrix;
+        this.matrix.data = new_matrix;
+    }
 }
 
 MatrixVisualisator.prototype.add_col = function() {
-    var new_matrix = [];
-    for (var i = 0; i < this.matrix.data.length; i++) {
-        new_matrix[i] = [];
-        for (var j = 0; j < this.matrix.data[0].length + 1; j++) {
-            if (j < this.matrix.data[0].length)
-                new_matrix[i][j] = new Cell(this.matrix.data[i][j].val);
-            else new_matrix[i][j] = new Cell(null);
+    if (this.matrix.data[0].length == 10)
+    {
+        menu.style.background = "#f6c1c0";
+    }
+    else {
+        var new_matrix = [];
+        for (var i = 0; i < this.matrix.data.length; i++) {
+            new_matrix[i] = [];
+            for (var j = 0; j < this.matrix.data[0].length + 1; j++) {
+                if (j < this.matrix.data[0].length)
+                    new_matrix[i][j] = new Cell(this.matrix.data[i][j].val);
+                else new_matrix[i][j] = new Cell(null);
+            };
         };
-    };
-    this.matrix.data = new_matrix;
+        this.matrix.data = new_matrix;
+    }
 }
 
 MatrixVisualisator.prototype.del_col = function() {
-    var new_matrix = [];
-    for (var i = 0; i < this.matrix.data.length; i++) {
-        new_matrix[i] = [];
-        for (var j = 0; j < this.matrix.data[0].length - 1; j++) {
-            new_matrix[i][j] = new Cell(this.matrix.data[i][j].val);
+    if (this.matrix.data[0].length == 2)
+    {
+        menu.style.background = "#f6c1c0";
+
+    }
+    else {
+        var new_matrix = [];
+        for (var i = 0; i < this.matrix.data.length; i++) {
+            new_matrix[i] = [];
+            for (var j = 0; j < this.matrix.data[0].length - 1; j++) {
+                new_matrix[i][j] = new Cell(this.matrix.data[i][j].val);
+            };
         };
-    };
-    this.matrix.data = new_matrix;
+        this.matrix.data = new_matrix;
+    }
+}
+
+MatrixVisualisator.prototype.mul = function(matrix_a, matrix_b) {
+    var new_matrix = multiply(matrix_a, matrix_b);
+    this.matrix = new_matrix;
 }
