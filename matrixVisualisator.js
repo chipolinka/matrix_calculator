@@ -34,7 +34,7 @@ MatrixVisualisator.prototype.create = function(div_id) {
             if (this.name == "c") {
                 input.disabled = true;
             }
-            if (this.matrix.data[i][j].val) {
+            if (this.matrix.data[i][j].val || this.matrix.data[i][j].val == 0) {
               input.value = this.matrix.data[i][j].val;
             }
             input.addEventListener("change", function () {
@@ -99,7 +99,7 @@ MatrixVisualisator.prototype.add_row = function() {
             };
         };
         this.matrix.data = new_matrix;
-    }
+    }    
 }
 
 MatrixVisualisator.prototype.del_row = function() {

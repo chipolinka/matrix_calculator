@@ -11,10 +11,12 @@ function multiply(matrix_a, matrix_b){
     var result = new Matrix(matrix_a.data.length, matrix_b.data[0].length);
     for (var k = 0; k < matrix_b.data[0].length; k++){ 
         for (var i = 0; i < matrix_a.data.length; i++){ 
-            var temp = 0;
+            var temp = null;
             for (var j = 0; j < matrix_b.data.length; j++)
                 if (!(matrix_a.data[i][j].val == null || matrix_b.data[j][k].val == null))
                 {
+                    if (!temp)
+                        temp = 0;
                     temp += matrix_a.data[i][j].val * matrix_b.data[j][k].val;
                 }
             result.data[i][k] = new Cell(temp);
@@ -36,7 +38,6 @@ function change() {
     var temp = MATRIX_CALCULATOR.matrix_a.matrix;
     MATRIX_CALCULATOR.matrix_a.matrix = MATRIX_CALCULATOR.matrix_b.matrix;
     MATRIX_CALCULATOR.matrix_b.matrix = temp;
-    // не забыть умножать с
     create_all_matrix();
 }
 

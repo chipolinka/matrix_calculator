@@ -3,13 +3,14 @@ body {
     margin: 0px;
     color: #000000;
     font: 15px "Segoe UI";
+    height: 100%;
 }
 
 #menu {
     float: left;
-    background-color: #CCCCCC;
+    background-color: #bcbcbc;
     width: 35%;
-    height: 100%;
+    height: inherit;
 }
 
 .icon {
@@ -21,12 +22,13 @@ body {
     margin-top: 5%;
     margin-left: 10%;
     color: white;
+    line-height: 20px;
     text-decoration: none;
-    padding: .7em 4em calc(.5em + 8px);    
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+    padding: .5em 3em calc(.3em + 5px);    
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
     background: linear-gradient(#1FAE0F, #138916) green;
     border: solid 1px #008000;
     cursor:pointer;
@@ -53,19 +55,19 @@ body {
     font-size: 13px;
     line-height: 20px;
     text-align: center;
-    border: solid 1px #939693;
+    border: solid 2px #abaaaa;
     cursor: pointer;
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     background: 
-    -moz-linear-gradient(0% 100% 90deg, #CCCCCC, #FFFFFF);
+    -moz-linear-gradient(0% 100% 90deg, #eeeeee, #FFFFFF);
     background: 
-    -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#CCCCCC));
+    -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFFFFF), to(#eeeeee));
     
 }
 .gray:hover {
     background: #d8d8d8;
     background: linear-gradient(#d8d8d8, #ece8e8) #033A03;
-    border: solid 1px #939693;
+    border: solid 2px #b4b4b4;
 }
 .gray:focus {
     border: solid 2px #02a6c9;
@@ -73,7 +75,7 @@ body {
 
 .gray:active {
     background: #CCCCCC;
-    border: solid 1px #939693;
+    border: solid 2px #b4b4b4;
 }
 #type_matrix {
     margin-top: 15%;
@@ -89,7 +91,7 @@ body {
 }
 
 #matrices {
-    float: center;
+    white-space: nowrap;
 }
 
 #matrices div {
@@ -98,9 +100,9 @@ body {
 
 #matrices table {
     table-layout: fixed;
-    border: 2px solid #000;
-    border-top: 0px dashed #000;
-    border-bottom: 0px dashed #000;
+    border: 2px solid transparent;
+    border-image: url(1.png) 8% 7% 13%;
+    text-align: left;
 }
 
 #matrices table input {
@@ -127,7 +129,28 @@ body {
     display: inline-block;
 }
 
+#B {
+    font: 30px "Segoe UI";
+    /*font-weight: bold;*/
+    line-height: 20px;
+    text-align: center;
+}
+
 #matrix_a {
+    float: left;
+}
+
+#A .child {
+    font: 30px "Segoe UI";
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#A .helper {
+    display: inline-block;
+    vertical-align: middle;
+    height: 30%;
+    width: 0px;
 }
 
 #error_message {
