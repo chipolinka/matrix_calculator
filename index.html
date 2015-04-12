@@ -2,19 +2,20 @@
 	<head>
 	<title>SKB Kontur test task</title>
 	<meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=8">
 	<link rel="stylesheet" type="text/css" href="main.css">
 	</head>
 
 	<body>
-		<div id="menu">
+		<div id="menu" name="menu">
       <div>
-			 <button id="mul">Умножить матрицы</button> <span class="mul-triangle"></span>
+			 <button id="mul" name="mul">Умножить матрицы</button> <span class="mul-triangle"></span>
 			</div>
-      <div id="clear">
-        <button class="gray"> <span class="icon">↶</span> Очистить матрицы</button>
+      <div>
+        <button id="clear" class="gray"> <span class="icon">↶</span> Очистить матрицы</button>
 			</div>
-      <div id="change">
-        <button class="gray"> <span class="icon">⇅</span> Поменять матрицы местами</button>
+      <div>
+        <button id="change" class="gray"> <span class="icon">⇅</span> Поменять матрицы местами</button>
 			</div>
       <div id="type_matrix">
       	<input name="matrix" type="radio" value="matrix_a" checked> Матрица А
@@ -22,9 +23,10 @@
   		</div>
       <div> 
   		<p id="row"><button id="add_row" class="gray"><span class="icon">✚</span> Добавить</button> 
-  			<button id="del_row" class="gray"><span class="icon">➖</span> Удалить</button> строку</p>
+  			<button id="del_row" class="gray">
+          <span class="icon"><!--[if IE]> - <![endif]--><!--[if !IE]><!-->➖<!--<![endif]--></span> Удалить</button> строку</p>
   		<p id="col"><button id="add_col" class="gray"><span class="icon">✚</span> Добавить</button> 
-  			<button id="del_col" class="gray"><span class="icon">➖</span> Удалить</button> столбец</p>
+  			<button id="del_col" class="gray"><span class="icon"><!--[if IE]> - <![endif]--><!--[if !IE]><!-->➖<!--<![endif]--></span> Удалить</button> столбец</p>
 		  </div>
       <div id="error_message">
         <p>Такие матрицы нельзя перемножить, <br/>
@@ -36,11 +38,11 @@
       <div class="left_col">
         <div id="matrix_c"></div>
         <div id="matrix_b"></div>
-        <div id="B">B</div>
+        <div id="letter_b">B</div>
       </div>
       <div class="right_col">
         <div id="matrix_a"></div>
-        <div id="A">
+        <div id="letter_a">
           <div class="child">A</div>
           <div class="helper"></div>
         </div>

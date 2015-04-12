@@ -19,7 +19,7 @@ var MatrixVisualisator = function(name, div_id, matrix) { this.name = name; this
 
 MatrixVisualisator.prototype.create = function(div_id) {
     var matrix = this.matrix;
-    menu = document.getElementById("menu");
+    var menu = document.getElementById("menu");
     this.div = document.getElementById(div_id);
     var table = document.createElement("table");
     for (var i = 0; i < this.matrix.data.length; i++) {
@@ -27,6 +27,11 @@ MatrixVisualisator.prototype.create = function(div_id) {
         for (var j = 0; j < this.matrix.data[0].length; j++) {
             var td = document.createElement("td");
             var input = document.createElement("input");
+
+            if (input.dataset == null) {
+                input.dataset = {};
+            }
+
             input.dataset["row"] = i;
             input.dataset["col"] = j;
             input.size = 1;
@@ -37,17 +42,33 @@ MatrixVisualisator.prototype.create = function(div_id) {
             if (this.matrix.data[i][j].val || this.matrix.data[i][j].val == 0) {
               input.value = this.matrix.data[i][j].val;
             }
-            input.addEventListener("change", function () {
-                matrix.data[this.dataset["row"]][this.dataset["col"]].val = this.value;
-            });
-            input.addEventListener("focus", function () {
-                menu.style.background = "#5199db";    
-            });
-            input.addEventListener("blur", function () {
-                menu.style.background = "#ccc";
-            });
+            
+            if (input.addEventListener) {
+                input.addEventListener("change", function () {
+                    matrix.data[this.dataset["row"]][this.dataset["col"]].val = this.value;
+                });
+                input.addEventListener("focus", function () {
+                    menu.style.background = "#5199db";    
+                });
+                input.addEventListener("blur", function () {
+                    menu.style.background = "#ccc";
+                });
+            } else  if (input.attachEvent) {
+                input.attachEvent("onchange", function () {
+                    var callerElement = window.event.target || window.event.srcElement;
+                    matrix.data[callerElement.dataset["row"]][callerElement.dataset["col"]].val = callerElement.value;
+                });
+                input.attachEvent("onfocus", function () {
+                    menu.style.background = "#5199db";    
+                });
+                input.attachEvent("onblur", function () {
+                    menu.style.background = "#ccc";
+                });
+            }
+
             td.appendChild(input);
             tr.appendChild(td);
+
         }
         table.appendChild(tr);
     }
@@ -68,7 +89,11 @@ MatrixVisualisator.prototype.tranpose = function() {
 
 MatrixVisualisator.prototype.del_table = function() {
     var table = this.div.getElementsByTagName("table")[0];
-    table.remove();
+    if (table.remove) {
+        table.remove();
+    } else {
+        table.parentNode.removeChild(table);
+    }
 }
 
 MatrixVisualisator.prototype.clear = function() {

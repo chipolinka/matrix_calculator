@@ -1,6 +1,6 @@
 function multiply(matrix_a, matrix_b){
-    menu = document.getElementById("menu");
-    error_message = document.getElementById("error_message");
+    var menu = document.getElementById("menu");
+    var error_message = document.getElementById("error_message");
     if (!is_correct(matrix_a, matrix_b)) {
         menu.style.background = "#f6c1c0";
         error_message.style.display = "block";
